@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--指定mapper文件-->
+        <property name="mapperLocations" value="classpath*:*Mapper.xml"/>
+        <!--mybatis-config文件解析之后mybatis是用Configuration类型来代表(入口对象)-->
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <!--配置显示sql的日志-->
+                <property name="logImpl" value="org.apache.ibatis.logging.stdout.StdOutImpl"/>
+            </bean>
+        </property>
+        <property name="plugins">
+            <list>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <!--   <props>
+                               <prop key="supportMethodsArguments">true</prop>
+                               <prop key="reasonable">true</prop>
+                           </props>
+   -->
+                        <value>
+                            supportMethodsArguments=true
+                            resonable=true
+                        </value>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <mybatis:scan base-package="com.dao"/>
+
+</beans>

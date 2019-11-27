@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+            <property name="password" value="root"></property>
+            <property name="url" value="jdbc:mysql://localhost:3306/demo"></property>
+            <property name="username" value="root"></property>
+        </bean>
+
+        <bean id="queryRunner" class="org.apache.commons.dbutils.QueryRunner">
+            <constructor-arg ref="dataSource"></constructor-arg>
+            <constructor-arg value="true"></constructor-arg>
+        </bean>
+
+        <bean id="deptDao" class="com.lianxi.dao.impl.DeptDaoImpl">
+           <property name="queryRunner" ref="queryRunner"></property>
+        </bean>
+
+        <bean id="deptService" class="com.lianxi.service.impl.DeptServiceImpl">
+            <property name="dao" ref="deptDao"></property>
+        </bean>
+</beans>

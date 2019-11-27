@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch01-spring-container" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch02-spring-ioc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch03-spring-autowire" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch07-spring-mybatis-druid-good" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch11-spring-aop-advisor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch12-spring-tx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch12-spring-tx-work" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch13-annotation-container-ioc-aop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch14-annotation-txwork" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch141-annotation-tx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch15-annotation-tx-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch16-code-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch17-mvc-helloword" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch20-mvc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch20-mvc-receive-data" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch21-mvc-validation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch23-mvc-static" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch24-mvc-json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch26-intercaptor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch27-mvc-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch32-mvc-ssm-allcode" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch32-ssm-allcode" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-aop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-aop-advice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-mvc-login-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-mybatis-druid-good" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-test" charset="UTF-8" />
+  </component>
+</project>

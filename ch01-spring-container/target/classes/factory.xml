@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--1、-->
+    <bean id="first" scope="singleton" class="factory.A"></bean>
+    <!--不加scope-singleton属性就是单例模式，只执行一次-->
+    <!--2、静态方法-->
+    <bean id="factory" scope="singleton" class="factory.AFactory" factory-method="createA">
+
+    </bean>
+
+    <!--3、实例方法-->
+    <bean id="factory1" class="factory.AFactory"></bean>
+    <bean id="factory2"
+          factory-bean="factory1"
+          factory-method="createB"></bean>
+
+    <!--4、继承factoryBean<T>-->
+    <bean id="myfactory" class="factory.MyFactoryBean"></bean>
+
+</beans>

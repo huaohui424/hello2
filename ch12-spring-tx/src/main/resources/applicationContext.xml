@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/demo?useSSL=false"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+  <!--  <bean id="baseDao"  abstract="true">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>-->
+
+    <bean id="deptDao" class="com.dao.DeptDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="employeeDao" class="com.dao.EmployeeDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="deptService" class="com.service.impl.DeptServiceImpl">
+        <property name="deptDao" ref="deptDao"/>
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+
+    <!--<
+        事务管理器:主要用来管理物理连接,事务提交,回滚等功能
+       有了事务配置,对我们的dao里面用的连接相关的信息就有了要求:
+       1.因为这个事务管理器是针对DataSource,所以我们的dao必须用"同一个"dataSource
+       2.DataSource获取方法必须是Spring提供的方式
+        -->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:advice id="txAdvisor" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true" />
+            <tx:method name="*" propagation="REQUIRED" rollback-for="com.dao.MyCheckEx"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut id="serviceTx" expression="execution(* com.service..*.*(..))"/>
+        <aop:advisor advice-ref="txAdvisor" pointcut-ref="serviceTx"></aop:advisor>
+    </aop:config>
+</beans>

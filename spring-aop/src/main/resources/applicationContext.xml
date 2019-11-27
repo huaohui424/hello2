@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+        <bean id="log" class="com.Log"/>
+        <bean id="serviceImpl" class="com.ServiceImpl"/>
+
+        <aop:config>
+                <!--log与-->
+                <aop:aspect id="logAspect" ref="log">
+                        <aop:pointcut id="mypointcut" expression="execution(* com.*.*())"/>
+                        <aop:before method="before" pointcut-ref="mypointcut"/>
+                </aop:aspect>
+                
+        </aop:config>
+
+</beans>

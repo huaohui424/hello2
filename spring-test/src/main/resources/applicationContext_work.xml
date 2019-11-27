@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="deptDao" class="com.empdeptdao.impl.DeptDaoService"/>
+    <bean id="empDao" class="com.empdeptdao.impl.EmpDaoServiceimpl"/>
+    <bean id="myAdvisor" class="com.advisor.MyAdvisor"/>
+    <bean id="deptService" class="com.service.deptService">
+        <property name="deptDao" value="deptDao"/>
+        <property name="empDao" value="empDao"/>
+    </bean>
+    
+    <aop:config>
+        <aop:pointcut id="myPointcut" expression="execution(* com.service.deptService.*(..))"/>
+        <aop:advisor advice-ref="myAdvisor" pointcut-ref="myPointcut"/>
+    </aop:config>
+
+
+
+</beans>

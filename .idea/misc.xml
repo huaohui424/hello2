@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/ch07-spring-mybatis-druid-good" />
+    <file type="web" url="file://$PROJECT_DIR$/ch12-spring-tx-work" />
+    <file type="web" url="file://$PROJECT_DIR$/ch16-code-mybatis" />
+    <file type="web" url="file://$PROJECT_DIR$/ch17-mvc-helloword" />
+    <file type="web" url="file://$PROJECT_DIR$/ch20-mvc" />
+    <file type="web" url="file://$PROJECT_DIR$/ch20-mvc-receive-data" />
+    <file type="web" url="file://$PROJECT_DIR$/ch21-mvc-validation" />
+    <file type="web" url="file://$PROJECT_DIR$/ch23-mvc-static" />
+    <file type="web" url="file://$PROJECT_DIR$/ch24-mvc-json" />
+    <file type="web" url="file://$PROJECT_DIR$/ch26-intercaptor" />
+    <file type="web" url="file://$PROJECT_DIR$/ch27-mvc-file" />
+    <file type="web" url="file://$PROJECT_DIR$/ch32-mvc-ssm-allcode" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-mvc-login-file" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-mybatis-druid-good" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-test" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ch14-annotation-tx/pom.xml" />
+        <option value="$PROJECT_DIR$/ch32-ssm-allcode/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ch17-mvc-helloword" />
+        <module name="ch26-intercaptor" />
+        <module name="ch141-annotation-tx" />
+        <module name="ch23-mvc-static" />
+        <module name="ch02-spring-ioc" />
+        <module name="spring-aop" />
+        <module name="spring-test" />
+        <module name="ch11-spring-aop-advisor" />
+        <module name="ch15-annotation-tx-mybatis" />
+        <module name="ch20-mvc" />
+        <module name="ch12-spring-tx-work" />
+        <module name="spring-mybatis-druid-good" />
+        <module name="ch14-annotation-txwork" />
+        <module name="spring-mvc-login-file" />
+        <module name="ch07-spring-mybatis-druid-good" />
+        <module name="ch21-mvc-validation" />
+        <module name="ch16-code-mybatis" />
+        <module name="ch32-mvc-ssm-allcode" />
+        <module name="ch12-spring-tx" />
+        <module name="ch27-mvc-file" />
+        <module name="ch01-spring-container" />
+        <module name="ch13-annotation-container-ioc-aop" />
+        <module name="ch24-mvc-json" />
+        <module name="spring-aop-advice" />
+        <module name="ch20-mvc-receive-data" />
+        <module name="ch03-spring-autowire" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ch14-annotation-tx" target="1.8" />
+      <module name="ch32-ssm-allcode" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

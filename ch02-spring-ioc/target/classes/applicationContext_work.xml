@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="factory" class="com.nf.work.SqlSessionFactorCreator">
+        <property name="prop">
+            <props>
+                <prop key="url">jdbc:mysql://localhost:3306/demo?useSSL=false</prop>
+                <prop key="driver">com.mysql.jdbc.Driver</prop>
+                <prop key="username">root</prop>
+                <prop key="password">root</prop>
+            </props>
+        </property>
+        </bean>
+
+    <!--create是和SqlSessionFactorCreator类中的create方法名称一样-->
+    <bean id="factory2" factory-bean="factory" factory-method="create">
+
+    </bean>
+
+</beans>

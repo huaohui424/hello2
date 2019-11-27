@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myAdvisor" class="com.advisor.MyAdvisor"/>
+    <bean id="emp" class="com.service.ipml.EmployeeServiceImpl"/>
+    <bean id="factoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="emp"></property>
+        <property name="interfaces">
+            <list>
+                <value>com.service.EmployeeService</value>
+            </list>
+        </property>
+
+        <property name="interceptorNames">
+            <list>
+                <value>myAdvisor</value>
+            </list>
+        </property>
+    </bean>
+    
+
+
+</beans>

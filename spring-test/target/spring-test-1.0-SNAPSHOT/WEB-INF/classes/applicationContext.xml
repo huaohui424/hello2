@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--当bean的scope是prototype(原型)的时候，先调用InitializingBean的方法，然后直接调用FactoryBean的getObject方法-->
+    <!--当bean的scope是sinleton(单例)的时候，先调用InitializingBean的方法，然后依次调用FactoryBean的方法-->
+    <bean id="factory" scope="singleton" class="com.A">
+    </bean>
+
+    <bean id="factory1" class="com.A" factory-method="createB">
+
+    </bean>
+</beans>
