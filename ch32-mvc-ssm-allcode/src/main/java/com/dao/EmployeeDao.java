@@ -8,5 +8,5 @@ import java.util.List;
 public interface EmployeeDao {
     List<EmployeeEntity> getAll(@Param("pageNum") int pageNum,
                                 @Param("pageSize") int pageSize);
-    //listen to me
+    //listen to me ok?
 }
